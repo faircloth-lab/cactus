@@ -1265,7 +1265,7 @@ class ChildTreeJob(RoundedJob):
     def __init__(self, memory=None, cores=None, disk=None, preemptable=None,
                  unitName=None, checkpoint=False, maxChildrenPerJob=20):
         self.queuedChildJobs = []
-        self.maxChildrenPerJob = maxChildrenPerJob
+        self.maxChildrenPerJob = sys.maxsize
         super(ChildTreeJob, self).__init__(memory=memory, cores=cores, disk=disk,
                                            preemptable=preemptable, unitName=unitName,
                                            checkpoint=checkpoint)
